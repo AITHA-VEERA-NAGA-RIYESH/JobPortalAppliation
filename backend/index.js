@@ -8,13 +8,16 @@ import companyRoute from "./routes/company.route.js";
 import jobRoute from "./routes/job.route.js";
 import applicationRoute from "./routes/application.route.js";
 import { newsLetterCron } from "./automation/newsLetterCron.js";
-
+const path = require("path");
 dotenv.config({});
 
 const app = express();
 
 // middleware
 app.use(express.json());
+const _dirname = path.dirname("")
+const buildpath = path.join(_dirname,"../frontend/frontend/dist")
+app.use(express.static(buildpath))
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 const corsOptions = {
