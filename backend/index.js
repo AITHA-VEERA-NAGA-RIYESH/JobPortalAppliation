@@ -16,7 +16,7 @@ const app = express();
 // middleware
 app.use(express.json());
 const _dirname = path.dirname("")
-const buildpath = path.join(_dirname,"../frontend/frontend/dist")
+const buildpath = path.join(_dirname,"../frontend/dist")
 app.use(express.static(buildpath))
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
